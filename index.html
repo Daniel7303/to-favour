@@ -52,6 +52,8 @@
         text-align: center;
         padding: 30px;
         margin: 0 10px;
+        position: relative;
+        z-index: 10;
     }
 
     .quote {
@@ -74,10 +76,10 @@
         max-width: 100%;
         display: block !important;
         margin: auto;
+        margin-bottom: 50px;
     }
 
-    .important {
-        
+      
     }
     button:hover {
         background-color: #d94d3f;
@@ -88,7 +90,7 @@
         text-align: center;
         padding: 15px 0;
         color: #e0e0e0;
-        position: fixed;
+        position: relative; /* Instead of fixed */
         bottom: 0;
         width: 100%;
     }
@@ -143,6 +145,12 @@
         button {
             font-size: 0.9em;
             padding: 10px 15px;
+            display: block !important;
+                visibility: visible !important;
+                width: 100%; /* Make sure it's fully visible */
+                max-width: 300px;
+                margin: 10px auto;
+                text-align: center;
         }
 
         .gallery img {
@@ -178,7 +186,7 @@
 
     <section class="quotes">
         <div class="quote" id="quote-display">"If we had met on a different circumstance, i probably would have paid more attention."</div>
-        <button class="important" onclick="showRandomQuote()">✨ Show Another Quote</button>
+        <button id="quote-button" onclick="showRandomQuote()">✨ Show Another Quote</button>
     </section>
 
     <div class="modal" id="imageModal">
@@ -220,6 +228,15 @@
         }
 
         document.querySelector("button").style.display = "block";
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const quoteButton = document.getElementById("quote-button");
+            if (quoteButton) {
+                quoteButton.addEventListener("click", showRandomQuote);
+                quoteButton.style.display = "block"; // Ensure visibility
+            }
+        });
+
 
         function openModal(src) {
             const modal = document.getElementById('imageModal');
