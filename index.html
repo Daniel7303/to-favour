@@ -1,161 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Favour ❤️</title>
-    <style>
-        body {
-            font-family: 'Arial, sans-serif';
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(to bottom, #1b1b1b, #3a3a3a);
-            color: #e0e0e0;
-        }
+  <style>
+    body {
+        font-family: 'Arial, sans-serif';
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to bottom, #1b1b1b, #3a3a3a);
+        color: #e0e0e0;
+    }
 
-        header {
-            background: linear-gradient(to right, #3b3b3b, #4f4f4f);
-            text-align: center;
-            padding: 30px 10px;
-            color: #ffffff;
-        }
+    header {
+        background: linear-gradient(to right, #3b3b3b, #4f4f4f);
+        text-align: center;
+        padding: 30px 10px;
+        color: #ffffff;
+    }
 
+    header h1 {
+        font-size: 3em;
+        margin: 0;
+    }
+
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 20px;
+    }
+
+    .gallery img {
+        width: 100%;
+        max-width: 250px;
+        height: auto;
+        margin: 10px;
+        border-radius: 15px;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+    }
+
+    .gallery img:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+    }
+
+    .quotes {
+        text-align: center;
+        padding: 30px;
+        margin: 0 10px;
+    }
+
+    .quote {
+        font-size: 1.5em;
+        margin: 20px 0;
+        color: #ff6f61;
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    button {
+        padding: 10px 20px;
+        background-color: #ff6f61;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 1em;
+        cursor: pointer;
+        margin-top: 20px;
+        transition: background-color 0.3s;
+        max-width: 100%;
+        display: block !important;
+        margin: auto;
+    }
+
+    .important {
+        
+    }
+    button:hover {
+        background-color: #d94d3f;
+    }
+
+    footer {
+        background: #2b2b2b;
+        text-align: center;
+        padding: 15px 0;
+        color: #e0e0e0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+
+    /* Modal Styling */
+    .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal img {
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 15px;
+    }
+
+    .modal span {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 2em;
+        color: white;
+        cursor: pointer;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    /* Mobile-Specific Adjustments */
+    @media (max-width: 768px) {
         header h1 {
-            font-size: 3em;
-            margin: 0;
-        }
-
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin: 20px;
-        }
-
-        .gallery img {
-            width: 100%;
-            max-width: 250px;
-            height: auto;
-            margin: 10px;
-            border-radius: 15px;
-            cursor: pointer;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s;
-        }
-
-        .gallery img:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
-        }
-
-        .quotes {
-            text-align: center;
-            padding: 30px;
-            margin: 0 10px;
+            font-size: 2em;
         }
 
         .quote {
-            font-size: 1.5em;
-            margin: 20px 0;
-            color: #ff6f61;
-            animation: fadeIn 1s ease-in-out;
+            font-size: 1.2em;
         }
 
         button {
-            padding: 10px 20px;
-            background-color: #ff6f61;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 1em;
-            cursor: pointer;
-            margin-top: 20px;
-            transition: background-color 0.3s;
-            max-width: 100%;
-
+            font-size: 0.9em;
+            padding: 10px 15px;
         }
 
-        .important {
-            display: block !important;
-            margin: auto;
-
+        .gallery img {
+            width: 90%;
         }
-
-        button:hover {
-            background-color: #d94d3f;
-        }
-
-        footer {
-            background: #2b2b2b;
-            text-align: center;
-            padding: 15px 0;
-            color: #e0e0e0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-
-        /* Modal Styling */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal img {
-            max-width: 90%;
-            max-height: 90%;
-            border-radius: 15px;
-        }
-
-        .modal span {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 2em;
-            color: white;
-            cursor: pointer;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        /* Mobile-Specific Adjustments */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2em;
-            }
-
-            .quote {
-                font-size: 1.2em;
-            }
-
-            button {
-                font-size: 0.9em;
-                padding: 10px 15px;
-            }
-
-            .gallery img {
-                width: 90%;
-            }
-        }
-    </style>
+    }
+</style>
 </head>
-
 <body>
     <header>
         <h1>To Favour ❤️</h1>
@@ -182,8 +177,7 @@
     </section>
 
     <section class="quotes">
-        <div class="quote" id="quote-display">"If we had met on a different circumstance, i probably would have paid
-            more attention."</div>
+        <div class="quote" id="quote-display">"If we had met on a different circumstance, i probably would have paid more attention."</div>
         <button class="important" onclick="showRandomQuote()">✨ Show Another Quote</button>
     </section>
 
@@ -206,8 +200,8 @@
             "You make my heart smile in ways I never thought possible.",
             "My heart is perfect because you are inside.",
             "In your smile, I see something more beautiful than the stars."
-
-
+            
+    
         ];
 
         let musicPlaying = false;
@@ -221,7 +215,7 @@
             confetti({
                 particleCount: 100,
                 spread: 70,
-                origin: {y: 0.6}
+                origin: { y: 0.6 }
             });
         }
 
@@ -256,5 +250,4 @@
     <!-- Include confetti.js -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 </body>
-
 </html>
