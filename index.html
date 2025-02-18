@@ -72,6 +72,8 @@
         margin-top: 20px;
         transition: background-color 0.3s;
         max-width: 100%;
+        display: block !important;
+        margin: auto;
     }
 
     button:hover {
@@ -172,7 +174,7 @@
     </section>
 
     <section class="quotes">
-        <div class="quote" id="quote-display">"You are my today and all of my tomorrows."</div>
+        <div class="quote" id="quote-display">"If we had met on a different circumstance, i probably would have paid more attention."</div>
         <button onclick="showRandomQuote()">✨ Show Another Quote</button>
     </section>
 
@@ -190,7 +192,7 @@
             "I love you not because of who you are, but because of who I am when I am with you.",
             "Oooh my God.",
             "If we had met on a different circumstance, i probably would have paid more attention.",
-            "Butterflies",
+            " Queen of Butterflies",
             "Every moment with you is a treasure.",
             "You make my heart smile in ways I never thought possible.",
             "My heart is perfect because you are inside.",
@@ -213,6 +215,8 @@
                 origin: { y: 0.6 }
             });
         }
+
+        document.querySelector("button").style.display = "block";
 
         function openModal(src) {
             const modal = document.getElementById('imageModal');
